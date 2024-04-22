@@ -1,0 +1,160 @@
+main,
+form,
+div,
+label,
+input,
+p,
+button,
+h2,
+span {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Purple: hsl(259, 100%, 65%);
+  --Light-red: hsl(0, 100%, 67%);
+  --White: hsl(0, 0%, 100%);
+  --Off-white: hsl(0, 0%, 94%);
+  --Light-grey: hsl(0, 0%, 86%);
+  --Smokey-grey: hsl(0, 1%, 44%);
+  --Off-black: hsl(0, 0%, 8%);
+  --slim-white: hsl(0, 0%, 84%);
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--Off-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+main {
+  background-color: var(--White);
+  padding: 2rem;
+  border-radius: 2rem 2rem 7rem 2rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fields {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+
+#errorMessage-year,
+#errorMessage-month,
+#errorMessage-day {
+  display: none;
+}
+
+label {
+  text-transform: uppercase;
+  font-weight: bolder;
+  color: var(--Smokey-grey);
+}
+
+::placeholder {
+  font-weight: bolder;
+  color: var(--Smokey-grey);
+}
+
+.fields div input.error-border {
+  border: 1px solid red;
+}
+
+.fields div {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.fields div input {
+  width: 5rem;
+  padding: 1rem 0.8rem;
+  border: 1px solid var(--slim-white);
+  border-radius: 0.3rem;
+}
+
+.fields div input:focus {
+  outline: none;
+  border-color: var(--Purple);
+  box-shadow: 0 0 0 1px var(--Purple);
+}
+
+hr {
+  border: 1px solid rgb(219, 219, 219);
+  width: 100%;
+}
+
+button {
+  background-color: var(--Purple);
+  border: none;
+  border-radius: 50%;
+  padding: 1.5rem;
+  position: relative;
+  top: -3rem;
+}
+
+.icon-arrow {
+  width: 2rem;
+}
+
+.result h2 {
+  font-size: 3.2rem;
+  font-style: italic;
+}
+
+span {
+  color: var(--Purple);
+}
+
+#errorMessage-day,
+#errorMessage-month,
+#errorMessage-year {
+  font-size: 0.6rem;
+  color: var(--Light-red);
+  margin-top: 0rem;
+}
+
+@media screen and (min-width: 75rem) {
+  main {
+    min-width: 45rem;
+    padding: 3rem;
+  }
+
+  .fields {
+    margin-right: auto;
+    gap: 2rem;
+  }
+
+  .fields div input {
+    width: 7rem;
+    padding: 1.5rem 2rem;
+  }
+
+  button {
+    margin-left: auto;
+  }
+
+  .result {
+    margin-top: -3rem;
+  }
+
+  .result h2 {
+    font-size: 5rem;
+  }
+
+  ::placeholder {
+    font-size: 1.2rem;
+  }
+}
